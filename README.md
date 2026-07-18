@@ -1,9 +1,14 @@
+<div align="center">
+
 # Recommendation System Using Autoencoders
 
-A movie recommender built with autoencoders on the MovieLens 1M dataset, following the approach of Ferreira et al. (2020).
-
-[![Python](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626.svg)](https://jupyter.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Dataset: MovieLens 1M](https://img.shields.io/badge/Dataset-MovieLens%201M-green.svg)](https://grouplens.org/datasets/movielens/1m/)
+
+*Collaborative filtering on MovieLens 1M with shallow and deep autoencoders.*
+
+</div>
 
 ## Overview
 
@@ -21,12 +26,11 @@ An autoencoder is trained to reconstruct each user's (sparse) rating vector; the
 
 All in `Recommendation_System_Using_Autoencoders.ipynb` (written for Google Colab):
 
-- Build a user-item rating matrix (6,040 x 3,952) with ratings scaled to (0, 1]; the raw matrix is about 95.8% sparse.
-- Filter out movies with fewer than 20 ratings, leaving 3,043 items, and split users 70/30 into train and test sets.
+- **Rating matrix**: a user-item matrix (6,040 x 3,952) with ratings scaled to (0, 1]; the raw matrix is about 95.8% sparse. Movies with fewer than 20 ratings are filtered out, leaving 3,043 items, and users are split 70/30 into train and test sets.
 - **Base model**: a single-hidden-layer autoencoder (256-unit bottleneck, tanh encoder / sigmoid decoder, He initialization), trained with Adam and MSE loss for 50 epochs.
 - **Deep model**: a deeper encoder-decoder (512 -> 128 units with dropout), trained for 100 epochs at a lower learning rate.
-- Evaluate by binarizing actual and reconstructed ratings at 0.7 (roughly "rated 4+") and computing the Dice matching coefficient, precision, and recall.
-- Generate recommendations: feed a custom binary preference vector through the trained autoencoder and take the top-25 highest-scored movies.
+- **Evaluation**: actual and reconstructed ratings are binarized at 0.7 (roughly "rated 4+") to compute the Dice matching coefficient, precision, and recall.
+- **Recommendation**: a custom binary preference vector is fed through the trained autoencoder and the top-25 highest-scored movies are returned.
 
 ## Results
 
@@ -39,31 +43,33 @@ Test-set scores from the executed notebook:
 
 The shallow base model reconstructed relevant items better overall (test MSE about 0.014); the deeper model was more precise but recalled far fewer relevant movies.
 
-## Repository structure
+## Quick Start
+
+```bash
+git clone https://github.com/mohammadi-hadi/Recommendation-System-Using-Autoencoders.git
+cd Recommendation-System-Using-Autoencoders
+pip install -r requirements.txt
+```
+
+1. Download the MovieLens 1M dataset and note the paths to `movies.dat`, `users.dat`, and `ratings.dat`.
+2. Open `Recommendation_System_Using_Autoencoders.ipynb` (Colab or Jupyter) and update the dataset paths in the setup cells (the originals point to a mounted Google Drive).
+3. Run the cells top to bottom.
+
+## Repository Structure
 
 ```
 Recommendation-System-Using-Autoencoders/
 ├── Recommendation_System_Using_Autoencoders.ipynb   # Full analysis notebook (with outputs)
-├── LICENSE
-└── README.md
+├── requirements.txt                                 # Python dependencies
+├── LICENSE                                          # MIT License
+└── README.md                                        # This file
 ```
-
-## Requirements / How to run
-
-Python 3 with:
-
-```
-numpy pandas matplotlib scikit-learn tensorflow keras
-```
-
-1. Download the MovieLens 1M dataset and note the paths to `movies.dat`, `users.dat`, and `ratings.dat`.
-2. Open the notebook (Colab or Jupyter) and update the dataset paths in the setup cells (the originals point to a mounted Google Drive).
-3. Run the cells top to bottom.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
-## Author
+## Contact
 
-Hadi Mohammadi — [mohammadi.cv](https://mohammadi.cv)
+- **Hadi Mohammadi** — Utrecht University
+- Website: [mohammadi.cv](https://mohammadi.cv)
