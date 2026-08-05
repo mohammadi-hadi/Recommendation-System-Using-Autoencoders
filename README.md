@@ -2,6 +2,7 @@
 
 # Recommendation System Using Autoencoders
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21803843.svg)](https://doi.org/10.5281/zenodo.21803843)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626.svg)](https://jupyter.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Dataset: MovieLens 1M](https://img.shields.io/badge/Dataset-MovieLens%201M-green.svg)](https://grouplens.org/datasets/movielens/1m/)
