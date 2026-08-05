@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Recommendation System Using Autoencoders"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Mohammadi
+    given-names: Hadi
+    orcid: "https://orcid.org/0000-0003-0860-9200"
+repository-code: "https://github.com/mohammadi-hadi/Recommendation-System-Using-Autoencoders"
+license: MIT
+version: 1.0.0
+date-released: "2026-08-05"
+abstract: "Movie recommendation system using autoencoders on the MovieLens 1M dataset."
+keywords:
+  - recommender-system
+  - autoencoder
+  - collaborative-filtering
+  - deep-learning
+  - keras
+  - movielens

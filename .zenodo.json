@@ -1,0 +1,20 @@
+{
+  "upload_type": "software",
+  "title": "Recommendation System Using Autoencoders",
+  "description": "Movie recommendation system using autoencoders on the MovieLens 1M dataset.",
+  "creators": [
+    {
+      "name": "Mohammadi, Hadi",
+      "orcid": "0000-0003-0860-9200"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "recommender-system",
+    "autoencoder",
+    "collaborative-filtering",
+    "deep-learning",
+    "keras",
+    "movielens"
+  ]
+}
